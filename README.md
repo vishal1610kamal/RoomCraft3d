@@ -19,14 +19,6 @@ Every model, every texture and the lighting environment itself is drawn by code 
 > host as-is (the build already uses a relative `base`). See
 > [Deploying](#-deploying).
 
-## 📸 Screenshots
-
-<!-- Replace these with real captures before submitting; see SUBMISSION_FORM.md §6 -->
-
-| Living room, daylight | Bedroom at night | Curtains drawn |
-|---|---|---|
-| ![Living room](./screenshots/1.png) | ![Bedroom at night](./screenshots/2.png) | ![Curtains drawn](./screenshots/3.png) |
-
 ---
 
 ## The idea
@@ -227,19 +219,6 @@ These cost real time and all but one lie about what's actually wrong:
    are set in a scene whose composer runs without a normal/depth pass.
 
 All four are written up with cause and fix in [`PERFORMANCE.md`](./PERFORMANCE.md).
-
----
-
-## 📚 Docs
-
-| File | What's in it |
-|---|---|
-| [`FEATURES.md`](./FEATURES.md) | Everything built, as built |
-| [`PERFORMANCE.md`](./PERFORMANCE.md) | Measurements, method, optimisations, the four bugs |
-| [`ASSETS_NEEDED.md`](./ASSETS_NEEDED.md) | Every placeholder + the one-file path to real assets |
-| [`SUBMISSION.md`](./SUBMISSION.md) | Hackathon submission write-up |
-| [`SUBMISSION_FORM.md`](./SUBMISSION_FORM.md) | Copy-paste content for the submission form |
-| [`CREDITS.md`](./CREDITS.md) | Attribution — no third-party art is bundled |
 
 ---
 
