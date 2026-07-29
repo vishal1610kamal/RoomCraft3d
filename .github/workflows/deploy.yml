@@ -1,0 +1,54 @@
+# Build RoomCraft 3D and publish it to GitHub Pages on every push to main.
+#
+# The site is served from a repo subpath (…github.io/RoomCraft3d/), which is
+# exactly why vite.config.js sets `base: './'` — relative asset URLs resolve
+# correctly wherever the bundle is mounted, with no per-host configuration.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # lets you re-deploy by hand from the Actions tab
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys race; the newest push wins.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22 # matches .nvmrc
+          cache: npm
+
+      # `npm ci` needs package-lock.json committed — it installs the exact
+      # versions the project was verified against rather than re-resolving.
+      - run: npm ci
+
+      - run: npm run build
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

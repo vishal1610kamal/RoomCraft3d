@@ -15,9 +15,10 @@ Every model, every texture and the lighting environment itself is drawn by code 
 
 ## 🔗 Live site
 
-> _Not deployed yet._ `npm run build` produces `dist/`, which runs on any static
-> host as-is (the build already uses a relative `base`). See
-> [Deploying](#-deploying).
+**https://vishal1610kamal.github.io/RoomCraft3d/**
+
+Deployed automatically from `main` by GitHub Actions
+([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)).
 
 ---
 
