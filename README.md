@@ -17,9 +17,6 @@ Every model, every texture and the lighting environment itself is drawn by code 
 
 **https://vishal1610kamal.github.io/RoomCraft3d/**
 
-Deployed automatically from `main` by GitHub Actions
-([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)).
-
 ---
 
 ## The idea
